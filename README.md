@@ -1,7 +1,7 @@
 # inf5aprogetto-faby21
 inf5aprogetto-faby21 created by GitHub Classroom
 
-# RILEVATORE BUCHE (titolo sempre e comunque provvisorio)
+# LAMB, segnalatore buche (titolo sempre e comunque provvisorio)
 
 Un applicativo per mobile in grado di rilevare le buche incontrate durante la guida e di segnalare la loro posizione
 
