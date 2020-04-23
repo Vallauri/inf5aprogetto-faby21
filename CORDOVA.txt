@@ -1,0 +1,115 @@
+"Apache Cordova is an open-source mobile development framework. It allows you to use standard web technologies such as HTML5, CSS3, and JavaScript for crossplatform development, avoiding each mobile platform native development language. Applications execute within wrappers targeted to each platform, and rely on standards-compliant API bindings to access each device's sensors, data, and network status."
+
+---
+
+Analisi e studio funzionalità Cordova
+
+Processo di installazione seguito
+Prequisiiti: node (per la gestione e la scrittura del codice), android studio SDK(per creare applicativi per android)
+1.eseguire il ocmando di isntalalzione: npm install -g cordova
+2.modificare le Var.Ambiente e inserire una nuova variabile ANDROID_HOME con valore: C:\Users\Utente\AppData\Local\Android\Sdk
+3.Inserire nella variabile PATH: tre nuove variabili aggiuntive: C:\Users\Utente\AppData\Local\Android\Sdk;
+																 C:\Users\Utente\AppData\Local\Android\Sdk\platform-tools; 
+															     C:\Users\Utente\AppData\Roaming\npm
+4.aprire terminale per creare un nuovo progetto: create cordova NuovoProgetto
+
+----
+
+Cordova Features
+
+Command Line Interface (Cordova CLI)
+"This tool can be used for starting projects, building processes for different platforms, installing plugins and lot of other useful things that make the development process easier."
+L'utilizzo di cordova si basa su command line, dopo aver opportunamente installato il programma ed impostato le variabili d'ambiente, è possibile
+creare,modificare ed aggiornare progetti con il cemplice utilizzo di un comndo apposito
+
+Cordova Core Components
+"Cordova offers a set of core components that every mobile application needs. "
+I componenti base verrano sfruttati dal device per realizzare un'interfaccia,funzioni e variabili
+
+Cordova Plugins
+"Cordova offers API that will be used for implementing native mobile functions to the JavaScript app."
+IMPORTANTE: cordova supporta vari plug in, che permettono di integrare javascript con funzioni del mobile
+
+Nel caso del progeto in questione:
+-compilazione e creazione tramite command line
+-componenti base usati per la realizzazione interfaccia ed interazione fra variabili, sensori e base dati dove registrare informazioni raccolte
+-plug in usati per: GEOLOCALIZZAZIONE
+					REGISTRARE VARIAZIONI ACCELEROMETRO
+
+---
+
+Processo di creazione
+
+Creazione secondo sintassi:
+cordova create <cartella_nuovo_progetto> <nome_package> <nome_app>
+
+Il comando scarica da internet i file essenziali per avviare un nuovo progetto,
+all’interno della cartella troveremo tutti i file necessari per
+implementare l'applicazione
+
+I passi successivi prevedono:
+
+1.Includere eventuali librerie aggiuntive per utilizzare al meglio le funzionalità del device
+2.Configurare gli ambienti Java e android SDK per predisporre l’ambiente di compilazione (ricordarsi di eseguire l’ambiente altrimenti non crea l’sdk)
+3/4.(Implementare le piattaforme ed installare ANDROID STUDIO) (Includere per android – gradle)
+5.Effettuare la compilazione del sorgente.
+6.Eseguire l’apk ottenuto
+
+Compatabilità piattaforma
+Ogni progetto può supportare determiante paittaforme
+Per aggiungere le piattaforme è sufficiente utilizzare il comando platform add ed occorre disporre di un ambiente operativo compatibile con la piattaforma scelta
+Il comando utilizzato è:
+cordova platform add [nomePiattaforma]
+
+-(Esistono i comandi LIST E REMOVE che visualizzano e rimuovono elementi)
+-Nel file platform.json si visualizzano le caratteristiche richieste dai device
+
+Compilazione
+
+Per effettuare la compilazione del codice è sufficiente utilizzare il
+comando build
+
+Il file apk si troverà all’interno del platform nella sottocartella
+\build\outputs\apk
+
+Il manifest (AndroidManifest.xml) dell’applicazione si troverà nella
+sottocartella
+build\intermediates\manifests\full\debug\
+
+La sottocartella res\values contiene il file strings.xml che include tutte le
+variabili dell’app
+
+Test
+- tramite emulatore android di An.Studio 
+- trasferendolo su telefono con cavo
+- testandolo online (se è app web) accedendo al localhost/[porta scelta]
+
+
+Struttura progetto
+la creazione del progetto predispone una serie di cartelle utili alla realizzazione dell’app
+la cartella di nostro interesse e’
+
+www
+
+all’interno troviamo in radice:
+
+index.html
+
+e le sottocartelle:
+
+js - css - img
+
+per il codice javascript possiamo includere altre librerie tipo jquery e possiamo tranquillamente lavorare su questi file/cartelle come se operassimo
+per un normale progetto javascript lato client
+
+
+
+---
+Crediti:
+Risorse Online:
+- https://www.tutorialspoint.com/cordova/index.htm 
+- https://www.html.it/guide/guida-apache-cordova/
+- https://cordova.apache.org/docs/it/3.1.0/index.html
+- https://ccoenraets.github.io/cordova-tutorial/
+Risorse didattiche:
+-lezioni dei docenti Armando(teoria Cordova) e Racca (utlizzo SDK)

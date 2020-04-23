@@ -1,0 +1,19 @@
+QUESTIONE: QUALE PLUG IN USARE PER LA GEOLOCALIZZAZIONE?
+Cordova supporta vari plug in, e fra essi ve ne sono molti per la gestione geolocalizzazione/mappazione
+GMap è certamente il più conociuto (https://github.com/mapsplugin/cordova-plugin-googlemaps)
+Durante lo sviluppo abbiamo anche scoperto che ci sono più opzioni, diverse in base alla necessità dell'utente
+
+Fra i fattori da considerare ci sono:
+
+Plug in Privato/Open Source: Gmap è un servizio privato, e sebbene funzioni molto bene, ve ne sono altri come OpenStreetMap che possono consentire più personalizzazione ed un livello di dettaglio maggiore. 
+
+Performance: API diverse funzionando in modo diverso sui device, alcune sono meglio optimizzate di altre. Puntando ad una diffusione in larga scala,
+bisognerebbe sceglierne uno il più compatibile e soprattutto leggera possibile
+
+Prezzo: alcuni plug in sono gratis, altri a pgamento mentre alcuni (Gmaps) sono gratis fino ad un certo numero di utilizzi. Naturalmente per lo sviluppo del progetto in ambito scolastico, ciò non comporta un problema, ma se il progetto dovesse essere portato ad un pubblico più grande, la gestione del plug in diventerebbe
+senz'altro più problematica
+
+Aggioramento: molto importante per quanto riguarda i plug in di geolocalizzazione/mappazione. L'aggiornamento delle mappe è utile non solo per l'attendibilità,
+ma anche per l'accessibilità degli utenti, ed è per questo importante scegliere plug in in grado di rimanere aggiornati
+
+Abbiamo trattato senza distinzioni API e plug-in cordova, ma la differenza fra i due è sostanziale. Anche la scelta fra i due non va presa alla leggera.
