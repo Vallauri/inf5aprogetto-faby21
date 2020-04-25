@@ -113,3 +113,4 @@ Risorse Online:
 - https://ccoenraets.github.io/cordova-tutorial/
 Risorse didattiche:
 -lezioni dei docenti Armando(teoria Cordova) e Racca (utlizzo SDK)
+-file condivisi dal docente Maggiore
