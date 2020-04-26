@@ -1,0 +1,102 @@
+QUESTIONE SALVATAGGIO DATI
+I dati da salvare sono le coordinate delle buche individuate, ed essi verranno immagazzianti in un database (SQL)
+La gestione del database non è un problema in se, ma oltre ad avere un db locale da cui accedere ai dati, sarebbe funzionale, ed ottimale, averne uno online
+per garantire lo scambio di informazioni fra utenti e realizzare una mappa completa e condvisa.
+Come creare e gestire dunque questo DB online?
+
+SVILUPPO
+
+PARTE I: invio dei dati
+Verificare la connettività
+Per potere rendere possibile un salvataggio di dati online, l'utente deve essere prima collegato alla rete
+Nel nostro caso specifico inoltre, l'app non può funzionare in maniera dinamica senza una connesisone di rete, perciò và verificata la connettività 
+
+"A questo scopo Apache Cordova ci mette a disposizione l’oggetto navigator.connection che ci fornisce informazioni sulla connessione wi-fi o cellulare del dispositivo. L’oggetto prevede la proprietà type che può assumere uno dei seguenti valori: "
+
+Connetion.UNKNOWN
+Connection.ETHERNET
+Connection.WIFI
+Connection.CELL_2G
+Connection.CELL_3G
+Connection.CELL_4G
+Connection.CELL
+Connection.NONE
+
+In questo modo si possono impostare diversi tipi di connessione
+"Utilizziamo l’oggetto navigator.connection nella nostra applicazione per implementare il metodo isOnline(): "
+
+var app = {
+	// ...
+	isOnline: function() {
+		var networkState = navigator.connection.type;
+		return ((networkState != Connection.NONE) && (networkState != Connection.UNKNOWN));
+	},
+	// ...
+}
+"Con questo metodo avremo modo di stabilire in qualsiasi momento se è disponibile una connessione o meno."
+Grazie a questo comando il problema della verifica della connesione è di per se risolto
+
+
+Invio dei dati
+Presupponendo di avere le coordinate accessibili e salvate
+"Una volta che ci siamo assicurati la disponibilità di una connessione, l’invio dei dati al server non è altro che una classica chiamata Ajax al server secondo le specifiche previste dal backend.
+Gestiamo l’evento tap sul pulsante di invio prevedendo le richieste di conferma come mostrato dal seguente codice:"
+
+function( InviaDati) {
+	if (app.isOnline()) //Metodo creato in precedenza
+	{
+		// Invio dati
+ 	} else {
+		navigator.notification.alert("Connessione Internet non disponibile!", function(){},"Informazione");
+	}
+}
+
+Per l’invio dati prevediamo un metodo send() dell’oggetto  che prevede come parametri l’elenco delle coordiante da inviare e due callback rispettivamente per l’invio con successo e per l’eventuale fallimento. Il codice in corrispondenza della conferma dell’utente diventa quindi:
+
+/Funzione di invio
+function(buttonIndex) {
+	//Conferma invio
+	if (buttonIndex == 1) {
+		var listaCoordinate= [];
+		for (var i=0; i<app.storage.length; i++) {
+		//Crea vettore di dati da mandare
+			coordinata.load(app.storage.key(i));
+			listaCoordinate.push(scheda.data);
+		}
+		coordinata.send(listaCoordinate,
+			function() {
+				navigator.notification.alert("Coordinate inviate!", function(){},"Informazione");
+			},
+			function() {
+				navigator.notification.alert("Si è verificato un problema durante l'invio!", function(){},"Errore");
+			});
+	}
+}
+
+Abbiamo creato un array di oggetti caricando le coordinate dal localStorage e l’abbiamo passato al metodo send() specificando le funzioni di callback di successo e fallimento.
+Il metodo send() avrà la seguente forma:
+
+var scheda = {
+	// ...
+	send: function(listaSchede, successCallback, failCallback) {
+		$.ajax({
+			url: "destinazione server",
+			type: "POST",
+			data: listaSchede})
+		.done(function() {app.storage.clear(); successCallback();})
+		.fail(failCallback);
+	}
+	// ...
+}
+Quindi niente di più che una chiamata Ajax al server.
+-----------------------------------------------------------------------------------
+PARTE II: gestione DB
+Abbiamo visto come inviare i dati, la prossima qestione è il DOVE inviarli
+Che sistema possiamo usare per memorizzarli?
+
+Fra le prme cose a venire in mente c'è WebSQL, un API web per lo storage dei dati in formato database nel browser attraverso Javascript.
+In sostanza si tratta di una delle varie API per lo storage dei dati nelle web application.
+
+Ma come garantire l'accesso a questo DB da online?
+
+(continua...)
