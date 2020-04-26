@@ -20,7 +20,7 @@ Data la corrente situazione di lock down testare sul campo l'app risulta impossi
 
 * [Cordova](https://cordova.apache.org/) - L'applicazione primaria
 * [GoogleAPI](https://cloud.google.com/maps-platform?hl=it) - Gestione posizione globale
-* [JquerMobile] - Parte Grafica
+* [JqueryMobile] - Parte Grafica
 * [Sql] - salvare dati su cloud
 
 
