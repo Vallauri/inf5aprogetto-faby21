@@ -1,0 +1,73 @@
+/*CSS Maggico*/
+
+
+
+	
+	/*font-family: 'Lexend Giga', sans-serif;*/
+.ui-header{
+	
+	/*background-color:#8c1aff!important; */
+	color:white!important;
+	
+}	
+.ui-footer{
+	
+	
+	
+	/*background-color:#8c1aff!important; */
+
+	font-family: Verdana;
+	font-weight:normal!important;
+}
+
+
+
+#logo{
+	
+	margin-left:15px;
+	margin-top:10px;
+	border:2px solid white;
+	border-radius: 7px;
+
+}
+
+#btnAccount{
+	
+	margin-top:10px;
+	
+	
+}
+#mappa{
+	
+	border-radius: 5px;
+	border:1px solid white;
+	
+}
+
+#menu{
+	
+	
+
+}
+
+#header2{
+	
+	width:100%;
+	height:180px;
+	background-image: url("header.jpg");
+	background-size:cover;
+	color:white;
+	font-family: 'Lato', sans-serif;
+	font-size:20px;
+	border-radius: 15px;
+	border:1px solid white;
+	
+}
+
+#titolo{
+	
+	margin-top:13%;
+	margin-left:12%;
+	width:80%;
+	
+}
