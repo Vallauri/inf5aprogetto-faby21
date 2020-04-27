@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Lamb - Rivelatore Buche</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+<!--Css esterni-->
+<link rel="stylesheet" href="css/style.css">
+
+<!--Script esterni-->
+<script src="js/script.js"></script> 
+<script src="js/index.js"></script> 
+
+<!--Fonts-->
+
+<link href="https://fonts.googleapis.com/css2?family=Lexend+Giga&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+	
+</head>
+<body>
+
+<!--Pagina index-->
+<div data-role="page" id="index">  
+
+
+<!--Panel Account-->
+<div data-role="panel" id="mypanel" data-position="right" data-theme="a">
+   
+ <a href="#index" data-role="button" data-rel="close" data-icon="delete" data-theme="b">Close</a>
+   
+</div>
+
+<!-- HEADER -->
+	<div  data-role="header"  data-theme="a"> 
+	
+		
+		
+		 <img id="logo" src="img/LAMB.png" width=50 height=50></img>
+		
+		<a id="btnAccount" href="#mypanel" data-icon="user" class="ui-btn-right" data-theme="b">Account</a>
+		
+	</div>
+	
+	
+	<!-- BODY-->
+	<div data-role="content" data-theme="b">
+	
+	
+		<!-- -->
+		<div id="header2">
+		
+		<p id="titolo">Ogni anno 3500 persone perdono la vita sulle nostre strade, ciascuno di noi puó fare la propria parte!</p>
+		</div>
+	
+		<br/>
+		
+		
+			<div class="ui-grid-a">
+			<div class="ui-block-a" style="margin-top:7px;font-family:'Lato', sans-serif"><strong>Mappa live:</strong></div>
+			<div   class="ui-block-b"><a style="width:0; margin-left:65%" href="#mission" data-transition="slideup" data-role="button" data-icon="bullets" ></a></div>
+			</div>
+		
+		
+			<!-- Mappa-->
+				<iframe id="mappa" style="height:50%; width:100%;" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d105317.05993931499!2d7.582820464074279!3d44.21399358595187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sit!2sit!4v1587926726112!5m2!1sit!2sit"  frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+		
+			<!-- Bottoni-->
+				<div data-role="controlgroup" id="menu" data-theme="a" data-type="horizontal">
+				  <a href="#about" data-transition="slideup" data-role="button" data-icon="navigation" >Rileva</a>
+				  <a href="#mission" data-transition="slideup" data-role="button" data-icon="alert" >Segnala</a>
+				
+				</div>
+			
+			
+			
+			
+			
+			
+</div>
+		
+		
+			
+			
+			
+			
+
+		
+		
+		
+			
+	
+	
+	
+	
+
+	<!-- FOOTER-->
+	
+	<div data-role="footer"  data-id="footerPersistente">
+		<h4>Credits</h4>
+		<a href="index.html" data-role="button" data-icon="info">Info</a>
+		
+	</div>
+	
+	
+
+
+	
+	
+</div>
+
+
+
+	<div data-role="page" id="dialog">
+		<!--Finestra di dialogo-->
+		<div data-role="header">
+			<h1>Titolo</h1>
+		</div>
+		<div data-role="content">
+			 <!-- contenuto finestra di dialogo -->
+			 
+			  <p id="testoDialog"></p>
+			 <a data-role='button' data-icon="home" href="index.html" >Chiudi</a>
+			
+			 
+		</div>
+	</div>
+
+
+
+	<!--Dialog carina-->
+	<div data-role="page" id="dialog">
+		<!--Finestra di dialogo-->
+		<div data-role="header">
+			<h1>Titolo</h1>
+		</div>
+		<div data-role="content">
+			 <!-- contenuto finestra di dialogo -->
+			 
+			  <p id="testoDialog"></p>
+			 <a href="index.html" >Chiudi</a>
+			
+			 
+		</div>
+	</div>
+
+
+
+	<!-- Altre pagine -->
+	
+	<div data-role="page" id="pagina2">
+		
+			
+			<p>MarcoParco é un sardo</p>
+			
+		
+			
+			
+	</div>
+
+	
+	
+</body>
+</html>
