@@ -1,0 +1,25 @@
+SPIEGAZIONE FILE
+
+Gestione Session
+ctrl_session: controlla sessione verificando esistenza variabile user in session
+setSession: crea varabile user in session
+
+Gestione Login
+registrazioneUser: crea account e controlla non esista duplicato user
+controlloLog: effettua login
+logout: rimuove la session corrente
+
+Gestione Buche
+ricevibuche: riceve tutte le buche SEGNALATE del db, per realizzare la mappa
+nuovaBuca: crea nuova buca salvando utente che l'ha rilevata e coordinate. Se la buca è già presente avverte l'utente
+Segnalazione: setta il campo "Segnalata" da 0 a 1
+cancellaBuca: rimuove una buca dal DB, nel caso osse stata rilevata/segnalata per sbaglio
+
+Gestione Amministrazione
+nuovaAmministrazione: funzione richiamata dall'utente per creare nuova amministrazione (inserire dentro amministrazione anche utente che l'ha aggiunta?)
+
+----------------------------------------------------
+COME RICHIAMARE LE FUNZIONI
+
+Basta fare chiamata ajax, con la libreria.js, e mettere come url
+http://fabianfilip.altervista.org/LAMB/FUNZIONE DA RICHIAMARE.php
