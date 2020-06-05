@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Lamb - Rilevatore Buche</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" href="img/LAMB.png">
+	
+<!-- <link rel="stylesheet" href="js/jquery/jquery.mobile-1.4.5.min.css">	
+ <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+
+<script src="js/jquery/jquery.mobile-1.4.5.min.js"></script> -->
+
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script> 
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+<!--Css esterni-->
+<link rel="stylesheet" href="css/style.css">
+
+<!--Script esterni - API Google di Maci-->
+
+<script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIDrzo9hVX7rGfE_F-vqBYA4aq7eATDS0" async defer></script>
+<script src="js/script.js"></script>
+ <script src="js/script3.js"></script>
+<script src="js/script4.js"></script> 
+<script src="js/script5.js"></script> 
+<script src="js/libreria.js"></script>
+
+<!-- Script per il Login/Registrazione-->
+<script src="js/scriptLogin.js"></script>
+
+
+<!--Fonts-->
+
+<link href="https://fonts.googleapis.com/css2?family=Lexend+Giga&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+	
+</head>
+<body>
+
+<!--Pagina index-->
+<div data-role="page" id="index">  
+
+
+<!--Panel Account-->
+<div data-role="panel" id="mypanel" data-position="right" data-theme="b">
+   
+ <a href="#index" data-role="button" data-rel="close" data-icon="delete" data-theme="a" data-iconpos="right" style="width:-5px;float:right;background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+	text-shadow:none;
+	"></a>
+ 
+	<br><br/>
+ 	<h1 id="titoloA" style="text-align:center;text-shadow:none!important;">Sign In</h1>
+	
+	
+	
+	
+	<!--Form Login-->
+	<div id="formLogin" >
+	
+
+		<label for="txtUser" >Username: </label>
+	
+		<input type="text" id="txtUser" placeholder="Username" data-role="none" data-theme="a" class="txt"/>
+
+		<br/>
+		<label for="txtPwd">Password:</label>
+	
+		<input type="password" id="txtPwd" placeholder="Password" data-role="none" data-theme="a" class="txt"/>
+		
+		<p id="txtErrore"></p>
+		
+		<br/>
+			<!-- Bottoni-->
+		
+		  <a id="btnLogin" data-transition="slideup" data-role="button"  class="primary" >Login</a>
+		  <a id="btnRegister" data-transition="slideup" data-role="button" data-icon="action" class="dark">Register</a>
+	
+	</div>
+	
+	
+	<!--Form Registrazione-->
+	
+	<div id="formRegister" >
+	
+
+		<input type="text" class="txt" placeholder="Inserire cognome" name="username" id="txtCogR"  data-role="none" required>
+	
+		<br/>
+		
+		<input type="text" class="txt" placeholder="Inserire nome" name="username" id="txtNomeR"  data-role="none" required>
+	
+		<br/>
+		
+		<input class="txt" placeholder="Inserisci l'email"  id="txtEmailR" data-role="none" required>
+		<br/>
+   
+		<input class="txt" placeholder="N. carta d'identita"  id="txtCIR" data-role="none" required>
+		<br/>
+			 
+		<input type="text" class="txt" placeholder="Inserire username" name="username" id="txtUserR"  data-role="none" required>
+	
+		<br/>
+   
+		<input class="txt" placeholder="Inserire password"  id="txtPwdR" type="password" data-role="none" required>
+		
+		
+   
+	
+		
+	
+		
+		<p id="txtErroreR"></p>
+		
+		<br/>
+		
+			<!-- Bottoni-->
+		
+	  <a id="btnSalva" data-transition="slideup" data-role="button"  class="success" >Salva</a>
+	  <a id="btnIndietro" data-transition="slideup" data-role="button"  class="primary">Indietro</a>
+	  <br/>
+
+	
+	</div>
+	
+	<!--Pagina Account-->
+	
+	<div id="pagAccount" >
+	
+		<div id="modificaDiv">
+			
+			<label for="txtEmailM">Mail:</label>
+			<input class="txt"  id="txtEmailM" data-role="none" required>
+			<br/>
+			<label for="txtPwdM">Password:</label>
+			<input type="password" class="txt"  id="txtPwdM" data-role="none" required>
+			
+			<a id="btnSalvaM" data-transition="slideup" data-role="button"  class="success" >Conferma modifiche</a>
+		</div>
+		
+		<a id="btnModifica" data-transition="slideup" data-role="button" data-icon="carat-r" class="dark">Modifica credenziali</a>	
+		 <a id="btnStatistiche" href="#paginaStatistiche" data-role="button" data-rel="close" data-icon="carat-r" class="lamb">Area Personale</a>
+		 <a id="btnLogout" data-transition="slideup" data-role="button" data-icon="carat-r" class="danger">Logout</a>
+		<a id="btnIndietro4" data-transition="slideup" data-role="button"  class="primary">Indietro</a>
+	
+	</div>
+	
+	
+	
+   
+</div>
+
+<!--Panel Opzioni-->
+<div data-role="panel" id="option" data-position="left" data-theme="b">
+   
+ <a href="#index" data-role="button" data-rel="close" data-icon="delete" data-theme="a" data-iconpos="right" style="width:-5px;float:right;background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+	text-shadow:none;
+	"></a>
+ <br></br>
+ <h1 id="titoloA" style="color:#404040;text-align:center; ">Options</h1>
+  <br></br>
+ 
+ <a href="#pagina2" data-role="button" data-rel="close" data-icon="carat-r" class="success">Accelerometro</a>
+ <br/>
+  <div id="AccountZone">
+ <a href="#paginaTratte" data-role="button" data-rel="close" data-icon="carat-r" class="light">Gestione Tratte</a>
+ <br/>
+ <a href="#paginaSegnalazioni" data-role="button" data-rel="close" data-icon="carat-r" class="warning">Gestione Segnalazioni</a>
+ <br/>
+
+ </div>
+<!-- <a id="btnLambre" data-role="button" data-rel="close" data-icon="audio" class="lamb">Mod.LambrenedettoXVI</a>-->
+   
+  
+</div>
+
+<!-- HEADER -->
+	<div  data-role="header"  data-theme="a"> 
+	
+		
+		
+		 <img id="logo" src="img/LAMB.png" width=50 height=50></img>
+		
+		<a id="btnAccount" data-icon="user" class="lamb ui-btn-right" data-theme="b">Account</a>
+		
+	</div>
+	
+	
+	<!-- BODY-->
+	<div data-role="content" data-theme="b" id="corpo">
+	
+	
+		<!-- -->
+		<div id="header2">
+		
+		<p id="titolo">Ogni anno 3500 persone perdono la vita sulle nostre strade, ciascuno di noi puó fare la propria parte!</p>
+		</div>
+	
+		<br/>
+		
+		
+			<div class="ui-grid-a" style="margin-top:-5%">
+			<div class="ui-block-a" style="margin-top:-20px;font-family:'Lato', sans-serif;font-size:20px"><h4>Mappa:</h4></div>
+			
+			<div   class="ui-block-b"><a style="width:0; margin-left:65%" href="#option" data-transition="slideup" data-role="button" data-icon="bars" ></a></div>
+			</div>
+		
+		
+			<!-- Mappa-->
+				<div id="map">
+				
+				</div>	
+			
+			<!-- Bottoni-->
+				<div data-role="controlgroup" id="menu" data-theme="a" data-type="horizontal">
+				  <a onclick="startWatch();" href="#dialog2" data-transition="pop " id="inizia"  data-role="button" data-icon="navigation" class="success" >Inizia a rilevare</a>
+				  <a id="interrompi" data-transition="slideup" data-role="button"   class="primary">Vedi Buche</a>
+					
+				</div>		
+				<p style="font-family: 'Orbitron', sans-serif;font-family:14px;margin-top:-3px" id="txtInfo" ></p>
+			
+			
+			
+</div>
+		
+		
+			
+			
+			
+			
+
+		
+		
+		
+			
+	
+	
+	
+	
+
+	<!-- FOOTER-->
+	
+	<div data-role="footer"  data-id="footerPersistente">
+
+	
+		<p style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&copyLamb 2020 - Tutti i diritti riservati</p>
+		
+		<a style="margin-left:5px"  href="#dialog" data-role="button" class="lamb" data-icon="info" >Info</a>
+		
+	</div>
+	
+	
+
+
+	
+	
+</div>
+
+
+
+	<div data-role="page" id="dialog" data-theme="b">
+		<!--Finestra di dialogo-->
+		<div data-role="header">
+			<h1>Titolo</h1>
+		</div>
+		<div data-role="content">
+			 <!-- contenuto finestra di dialogo -->
+			 
+			  <p id="testoDialog">&copyLamb 2020 - Tutti i diritti riservati</p>
+			 <a data-role='button' data-icon="home" href="index.html" >Chiudi</a>
+			
+			 
+		</div>
+	</div>
+
+
+
+	<!--Dialog carina-->
+	<div data-role="page" id="dialog">
+		<!--Finestra di dialogo-->
+		<div data-role="header">
+			<h1>Titolo</h1>
+		</div>
+		<div data-role="content">
+			 <!-- contenuto finestra di dialogo -->
+			 
+			  <p id="testoDialog"></p>
+			 <a href="index.html" >Chiudi</a>
+			
+			 
+		</div>
+	</div>
+
+
+
+	<!-- Altre pagine -->
+	
+	<div data-role="page" id="pagina2">
+		
+	<!-- HEADER-->	
+
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+	<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>	
+	<div  data-role="header"  data-theme="a"> 
+	
+	
+		  <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+		<script src="js/script2.js"></script> 
+		
+		 <img id="home" src="img/LAMB.png" width=50 height=50></img>
+	<a href="#index" data-icon="home" class="lamb ui-btn-right" data-theme="b" style="	margin-top:10px;">Home</a>
+		
+
+		
+		
+	</div>
+	
+	<!-- BODY-->
+	<div data-role="content" data-theme="b">
+	
+	   
+			
+		<h1 style="text-align:center">Accelerometro</h1>
+			
+			
+	 <button onclick="start()" id="btnStart" >Start Watching</button> 
+			
+		 <p id="accelerometer"></p>
+			
+					
+					
+		
+	</div>			
+				
+	<!-- FOOTER-->
+				
+	<div data-role="footer"  data-id="footerPersistente">
+
+	
+		<p style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&copyLamb 2020 - Tutti i diritti riservati</p>
+		
+		<a style="margin-left:5px"  href="#dialog" data-role="button" class="lamb" data-icon="info" >Info</a>
+		
+	</div>
+	
+			
+	</div>
+	
+	
+	<!--*************************************-->
+	<!--PAGINA TRATTE
+    <!--*************************************-->
+	
+	<div data-role="page" id="paginaTratte">
+		
+
+
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+	<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>	
+	
+	
+		<!-- HEADER-->	
+	<div  data-role="header"  data-theme="a"> 
+	
+	
+		 
+		 
+		
+		 <img id="home" src="img/LAMB.png" width=50 height=50></img>
+			<a href="#index" data-icon="home" class="lamb ui-btn-right" data-theme="b" style="	margin-top:10px;">Home</a>
+				
+
+		
+		
+	</div>
+	
+	<!-- BODY-->
+	<div data-role="content" data-theme="b" id="bodyTratte" >
+	
+	   
+			
+		<h1 id="titolo2" style="text-align:center; ;text-shadow:none!important;">Gestione Tratte</h1>
+		
+		<!--Forms -->
+		
+		
+		<div id="form1">
+		
+			<h4>Seleziona Tratta: </h4>
+		
+			<select type="text" id="cmbTratta" data-role="none" data-theme="a" class="txt">
+		
+			</select>
+
+			<br/>
+			
+			<a id="btnSeleziona" data-transition="slideup" data-role="button" class="info" >Seleziona</a>
+			
+			
+			<div>
+			<br/>
+			<h4>Aggiungi Tratta: </h4>
+			<a id="btnAggiungi" data-transition="slideup" data-role="button" data-icon="plus" class="dark" data-iconpos="right" >Aggiungi</a>
+			</div>	
+		</div>	
+		
+		
+		<div id="formSeleziona">
+		
+		
+			<h4><strong>Le mie buche:</strong> </h4>
+			
+			
+				<!-- Mappa-->
+				<div id="map2">
+				
+				</div>
+				<h4 id="testoBucaT">Non hai selezionato alcuna buca</h4>
+			
+			
+			<a id="btnAggiungiBuche" data-transition="slideup" data-role="button" class="success" >Aggiungi Buca alla Tratta</a>
+			<a id="btnDettagliT" href="#dialog" data-transition="pop "  data-role="button" class="light" >Visualizza dettagli Tratta</a>
+			<a id="btnSegnala" data-role="button" href="#dialog3" data-transition="pop "  data-icon="alert" class="warning">Segnala Tratta</a>
+   
+				<br/>
+			
+			<a id="btnIndietro3" data-transition="slideup" data-role="button"  class="primary">Indietro</a>
+		
+		
+		</div>
+		
+		<div id="formAggiungi" >
+
+
+			<h4 >Clicca sulla mappa per inserire le coordinate: </h4>
+			
+						<!-- Mappa-->
+				<div id="map4">
+				
+				</div>
+
+			<br/>
+		<input type="text" class="txt" placeholder="Coordinate di partenza" name="username" id="txtCP"  data-role="none" required>
+	
+		<br/>
+		
+		<input type="text" class="txt" placeholder="Coordinate di termine" name="username" id="txtCA"  data-role="none" required>
+	
+		<br/>
+		
+		<input type="text" class="txt" placeholder="Nome tratta"  id="txtNomeT" data-role="none" required>
+		<br/>
+		
+		<select type="text" id="cmbTipoTratta" data-role="none" data-theme="a" class="txt">
+			<option>Comunale</option>
+			<option>Provinciale</option>
+			<option>Regionale</option>
+			<option>Statale</option>
+			<option>Autostrada</option>
+		</select>
+		<br/>
+		
+		<p id="txtErroreAT" style="font-family: 'Orbitron', sans-serif;font-family:14px;margin-top:-3px"><p>
+		<a id="btnSalvaT" data-transition="slideup" data-role="button" class="success" >SalvaTratta</a>
+	
+		
+
+			
+			<a id="btnIndietro2" data-transition="slideup" data-role="button"  class="primary">Indietro</a>
+			
+		</div>
+		
+		<br><br/><br/>
+
+
+
+
+	
+
+				
+					
+		
+	</div>			
+				
+	<!-- FOOTER-->
+				
+	<div data-role="footer"  data-id="footerPersistente">
+
+	
+		<p style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&copyLamb 2020 - Tutti i diritti riservati</p>
+		
+		<a style="margin-left:5px" href="#dialog" data-role="button" class="lamb" data-icon="info" >Info</a>
+		
+	</div>
+	
+			
+	</div>
+	
+	
+	
+	<!-- Dialog statistiche-->
+	<div data-role="page" id="dialog" data-theme="b">
+	  <div data-role="header">
+		<h1>Dettagli Tratta</h1>
+	  </div>
+	  <div data-role="content" align="center">
+		<br/>
+		<p style="font-family: 'Orbitron';text-align:left" id="txtDettagliT"></p>
+		<br/>	
+		<a data-role='button' class="light"  href="#paginaTratte" >Chiudi</a>
+	  </div>
+	</div>
+	
+	<!-- Dialog statistiche Utente-->
+	<div data-role="page" id="dialog4" data-theme="b">
+	  <div data-role="header">
+		<h1>Statistiche</h1>
+	  </div>
+	  <div data-role="content" align="center">
+		<br/>
+		<p style="font-family: 'Orbitron';text-align:left" id="txtDettagliS"></p>
+		<br/>	
+		<a data-role='button' class="light"  href="#paginaStatistiche" >Chiudi</a>
+	  </div>
+	</div>
+	
+	
+	
+	
+	<!-- Dialog TUTORIAL-->
+	<div data-role="page" id="dialog2" data-theme="b"> 
+  <div data-role="header">
+    <h1>TUTORIAL</h1>
+  </div>
+  <div data-role="content" align="center">
+	<img src="img/TUTORIAL.png" alt="ASSICURATI DI AVER POGGIATO IL TELEFONO IN ORIZZONTALE PRIMA DI AVVIARE IL RILEVAMENTO" style="width:100%;height:250px;">
+    <p style="font-family: 'Orbitron';text-align:left"><b>Una volta appoggiato il telefono puoi partire ed iniziare a rilevare!</b></p>
+	<a data-role='button' class="lamb" data-icon="home" href="index.html" >Chiudi</a>
+  </div>
+</div>
+
+	<!-- Dialog Segnalazioni Tratte-->
+	<div data-role="page" id="dialog3" data-theme="b"> 
+  <div data-role="header">
+    <h1>Segnala tratta</h1>
+  </div>
+  <div data-role="content" align="center">
+  
+  
+  
+		<h1>Segnala Tratta</h1>
+      <br/>
+     
+  		<div id="fine2">
+		
+			<h4 id="lblSegnalazione2" style="text-align:left">Ente selezionato:  </h4>
+			
+			<input type="text" class="txt"  name="username" id="txtEnte2"  data-role="none" required>
+			
+			<br/>
+		
+			<h4 style="text-align:left">Inserisci Email Ente:  </h4>
+			
+			<input type="text" class="txt"  name="username" id="txtEmail2"  data-role="none" required>
+		
+		<br/>
+		
+		<p id="lblSegnalazioniT" style="font-family: 'Orbitron';text-align:left"></p>
+		
+		<a id="Invia2" data-transition="slideup" data-role="button" class="warning" >Invia Segnalazione</a>
+		
+		</div>
+
+  
+			<a data-role='button' class="danger"  href="#paginaTratte" >Chiudi</a>
+  </div>
+</div>
+	
+    <!--*************************************-->
+	<!--PAGINA SEGNALAZIONI
+    <!--*************************************-->
+	<div data-role="page" id="paginaSegnalazioni">
+		
+	<!-- HEADER-->	
+
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+	<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>	
+	<div  data-role="header"  data-theme="a"> 
+	
+	
+
+		
+	<img id="home" src="img/LAMB.png" width=50 height=50></img>
+	<a href="#index" data-icon="home" class="lamb ui-btn-right" data-theme="b" style="	margin-top:10px;">Home</a>
+	
+
+		
+		
+	</div>
+	
+	<!-- BODY-->
+	<div data-role="content" data-theme="b" id="bodySegnalazioni">
+	
+	   
+		<h1 id="titolo3" style="color:white;text-align:center;text-shadow:none!important;">Gestione Segnalazioni</h1>
+		
+
+			
+		<br/>
+		<div id="formSelezionaBuca">
+			<h3 >Seleziona buca: </h3>
+				
+					<!-- Mappa-->
+					<div id="map3">
+					
+					</div>
+					<h4 style="color:#ff4d4d" id="testoBucaB">Non hai selezionato alcuna buca</h4>
+					
+					
+			<h4 ">Selezionare l'entità della strada: </h4>
+			
+				<select type="text" id="cmbTipoTratta2" data-role="none" data-theme="a" class="txt">
+					<option></option>
+					<option>Comunale</option>
+					<option>Provinciale</option>
+					<option>Regionale</option>
+					<option>Statale</option>
+					<option>Autostrada</option>
+				</select>
+				
+				<br/>
+				
+				<a id="btnSeleziona2" data-transition="slideup" data-role="button" class="primary" >Seleziona</a>
+		</div>
+		
+	
+		
+		
+		<div id="fine">
+		
+		
+			<h4 id="lblSegnalazione" >Ente selezionato:  </h4>
+			
+			<input type="text" class="txt"  name="username" id="txtEnte"  data-role="none" required>
+			
+			<br/>
+		
+			<h4 >Inserisci Email Ente:  </h4>
+			
+			<input type="text" class="txt"  name="username" id="txtEmail"  data-role="none" required>
+		
+		</br>
+		<p id="lblSegnalazioniB" style="font-family: 'Orbitron';text-align:left"></p>
+		<a id="Invia" data-transition="slideup" data-role="button" class="warning" >Invia Segnalazione</a>
+		
+		</div>
+		
+		
+		
+	</div>	
+
+				
+	<!-- FOOTER-->
+				
+	<div data-role="footer"  data-id="footerPersistente">
+
+	
+		<p style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&copyLamb 2020 - Tutti i diritti riservati</p>
+		
+		<a style="margin-left:5px"  href="#dialog" data-role="button" class="lamb" data-icon="info" >Info</a>
+		
+	</div>
+	
+			
+	</div>
+	
+	
+	
+	<!--*************************************-->
+	<!--PAGINA STATISTICHE
+    <!--*************************************-->
+	
+	
+		<div data-role="page" id="paginaStatistiche">
+		
+	<!-- HEADER-->	
+
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+	<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>	
+	<div  data-role="header"  data-theme="a"> 
+	
+	
+
+		
+	<img id="home" src="img/LAMB.png" width=50 height=50></img>
+	<a href="#index" data-icon="home" class="lamb ui-btn-right" data-theme="b" style="	margin-top:10px;">Home</a>
+		
+
+		
+		
+	</div>
+	
+	<!-- BODY-->
+	<div data-role="content" data-theme="b" id="bodyStatistiche">
+	
+	   
+		<h1  style="color:white;text-align:center;text-shadow:none!important;">Gestione Buche</h1>
+		
+		
+		<!-- Buche rilevate, numero segnalazioni, mappa con le buche-->
+		<h4><strong>Le mie buche:</strong> </h4>
+			
+			
+				<!-- Mappa-->
+				<div id="mapS">
+				
+				
+				
+				
+				</div>
+				
+				<p id="txtBucheS" style="font-family: 'Orbitron'">Non hai selezionato alcuna buca</p>
+				
+			
+				
+		<a id="btnEliminaB" data-transition="slideup" data-role="button" class="danger" >Elimina Buca</a>
+		<a data-role="button" class="light"href="#dialog4" data-transition="pop " >Statistiche</a>
+		<br/>
+			<h2 style="text-align:center">Le mie Segnalazioni:</h2>
+			<br/>
+		<ol id="lstSegnalazioni" data-role="listview" >
+		
+		
+		</ol>
+	</div>	
+
+				
+	<!-- FOOTER-->
+				
+	<div data-role="footer"  data-id="footerPersistente">
+
+	
+		<p style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&copyLamb 2020 - Tutti i diritti riservati</p>
+		
+		<a href="#dialog" data-role="button" class="lamb" data-icon="info" >Info</a>
+		
+	</div>
+	
+			
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+</body>
+</html>
