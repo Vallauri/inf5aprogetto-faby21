@@ -1,0 +1,317 @@
+/*CSS Maggico*/
+
+
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+}
+h2 {
+    font-family: 'Orbitron', sans-serif;
+}
+h3,
+h4 {
+    font-family: 'Orbitron', sans-serif;
+}
+h5,
+h6 {
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+}
+
+
+
+/*CLASSI BOTTONI*/
+
+.warning{
+	
+	
+background:#ffc107!important;
+text-shadow:none!important;
+color:black!important;
+border:none!important;
+font-family: 'Orbitron', sans-serif!important;
+}
+
+
+.light{
+	
+	
+background:#f8f9fa!important;
+text-shadow:none!important;
+color:black!important;
+border:none!important;
+font-family: 'Orbitron', sans-serif!important;
+}
+
+
+.success{
+	
+	background:#28a745!important;
+	color:white!important;
+	text-shadow:none!important;
+	border:none!important;
+	font-family: 'Orbitron', sans-serif!important;
+    font-weight: 700;
+	
+}
+.primary{
+	
+	background:#007bff!important;
+	color:white!important;
+	text-shadow:none!important;
+	border:none!important;
+	font-family: 'Orbitron', sans-serif!important;
+    font-weight: 700;
+	
+}
+
+.danger{
+	
+	background:#dc3545!important;
+	color:white!important;
+	text-shadow:none!important;
+	border:none!important;
+	font-family: 'Orbitron', sans-serif!important;
+    font-weight: 700;
+	
+}
+.dark{
+	
+	background:#343a40!important;
+	color:white!important;
+	text-shadow:none!important;
+	border:none!important;
+	font-family: 'Orbitron', sans-serif!important;
+    font-weight: 700;
+	
+}
+.info{
+	
+	background:#17a2b8!important;
+	color:white!important;
+	text-shadow:none!important;
+	border:none!important;	
+	font-family: 'Orbitron', sans-serif!important;
+    font-weight: 700;
+	
+}
+
+.lamb
+{
+	
+	background:#70519D!important;
+	color:white!important;
+	text-shadow:none!important;
+	border:none!important;
+	font-family: 'Orbitron', sans-serif!important;
+    font-weight: 700;
+	
+}
+
+.alert
+{
+	
+	background: #e68a00!important;
+	color:white!important;
+	text-shadow:none!important;
+	border:none!important;
+    font-family: 'Orbitron', sans-serif!important;
+    font-weight: 700;
+	
+}
+
+	
+	/*font-family: 'Lexend Giga', sans-serif;*/
+.ui-header{
+	
+	/*background-color:#8c1aff!important; */
+	color:white!important;
+	
+}	
+.ui-footer{
+	
+	
+	
+	/*background-color:#8c1aff!important; */
+
+	font-family: Verdana;
+	font-weight:normal!important;
+}
+
+
+
+#logo{
+	
+	margin-left:15px;
+	margin-top:10px;
+	border:2px solid white;
+	border-radius: 7px;
+
+}
+
+#home{
+	
+	margin-left:15px;
+	margin-top:10px;
+	border:2px solid white;
+	border-radius: 7px;
+
+}
+
+#btnAccount{
+	
+	margin-top:10px;
+	
+	
+}
+#mappa{
+	
+	border-radius: 15px;
+	border:2px solid white;
+
+	
+}
+
+#menu{
+	
+	
+
+}
+#corpo{
+	
+	
+}
+
+#header2{
+	
+	
+	
+	background-image: url("header3.jpg");
+	background-size:cover;
+	color:white;
+	font-family: 'Baloo Bhaina 2', cursive;
+	font-size:21px;
+	border-radius: 10px;
+	/*border:1px solid white;*/
+	margin-top:-10%;
+	
+}
+
+#titolo{
+	
+	margin-top: 13%;
+    margin-left: 5%;
+	font-size:16px;
+    width: 92%;
+    padding-block-start: 80px;
+    padding-block-end: 55px;
+	font-family: 'Orbitron', sans-serif;
+	
+}
+
+#mypanel{
+	
+	
+	
+	background:url(login4.jpg);
+	background-size: cover;
+}
+
+#option{
+		background:url(option2.jpg);
+	background-size: cover;
+}
+
+#txtErrore{
+	
+ font-size:16px;
+	
+}
+.txt{
+	
+height: calc(1.5em + 1rem + 2px);
+    padding: .5rem 1rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    border-radius: .3rem;
+	display: block;
+    width: 100%;
+	    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+	box-sizing: border-box;
+	
+}
+
+#map{
+	
+	width:100%;
+	height:220px;
+	border:1px solid white;
+	border-radius:5px;
+}
+#map2{
+	
+	width:100%;
+	height:220px;
+	border:1px solid white;
+	border-radius:5px;
+}
+
+#map3{
+	
+	width:100%;
+	height:200px;
+	border:1px solid white;
+	border-radius:5px;
+}
+
+#map4{
+	
+	width:100%;
+	height:200px;
+	border:1px solid white;
+	border-radius:5px;
+}
+#mapS{
+	
+	width:100%;
+	height:200px;
+	border:1px solid white;
+	border-radius:5px;
+}
+
+.lbl{
+	
+	font-size:18px!important;
+	
+}
+
+.lbl2{
+	
+	color:#212529;
+	font-size:18px!important;
+	
+}
+
+
+
+#bodyTratte{
+	
+	background:url(login3.jpg);
+	background-size:cover;
+	
+	
+}
+#bodySegnalazioni{
+	
+	background:url(segnalazioni2.jpg);
+	background-size:cover;
+	
+	
+}
+
+
+
+}
