@@ -1,19 +1,27 @@
 # inf5aprogetto-faby21
 inf5aprogetto-faby21 created by GitHub Classroom
 
-# LAMB, segnalatore buche (titolo sempre e comunque provvisorio)
+# LAMB: segnalatore buche
 
 Un applicativo per mobile in grado di rilevare le buche incontrate durante la guida e di segnalare la loro posizione
 
 
 ## Primi test eseguiti
 
-sezione al momento vuota
-
+Test eseguiti nella zona del coniolo di Fossano e a Sant'Albano negli ultimi giorni. Riferire ai video per i risultati
 
 ## Sviluppo
+Passaggi dello sviluppo in ordine cronologico
+- ideazione
+- sviluppo grafica
+- gestione rilevaemnto
+- gestione account e registrazioni più web services php
+- gestione tratte
+- gestione segnalazione buche e tratte
+- ultimi test
 
-Data la corrente situazione di lock down testare sul campo l'app risulta impossibile, per questo per ora il progetto si sta concentrando sul lavoro sei singoli e sullo studio dei programmi che andranno usati. 
+Ad oggi, venerdì 5 giugno, il progetto è funzionante
+
 
 
 ## Tecnologie Usate
