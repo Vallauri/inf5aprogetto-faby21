@@ -32,4 +32,4 @@ Data la corrente situazione di lock down testare sul campo l'app risulta impossi
 
 
 ## Note
-Aggiunto un logo ed una visualizzazione grafica. Vorrei provare a metterle in una cartella separata per non creare disordine ma non capisco come spostare i file gà creati :/
+PRESENTAIONE PROGETTO: 5 giugno 14:10
